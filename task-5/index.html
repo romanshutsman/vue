@@ -22,7 +22,7 @@
     <button :class="goalValue ? '' : 'btnDisabled'" @click="addGoal()" v-bind:disabled="!goalValue">Add Goal</button>
     <p v-if="goals.length === 0">No goals have been added yet - please start adding some!</p>
     <!--      <ul v-if="goals.length > 0">-->
-    <ul v-show="goals.length > 0"> <!-- elements in DOM -->
+    <ul v-show="isListShown && goals.length > 0"> <!-- elements in DOM -->
         <!--      <ul v-else>-->
         <!--        <li v-for="goal in goals">{{goal}} </li>-->
         <li :key="goal" v-for="(goal, index) in goals">{{index + 1 }} - {{goal}}
@@ -31,6 +31,8 @@
     </ul>
     <!--      <li v-for="(value, key, index) in {name: 'Roman', lastName: 'Shutsman'}">{{key}}: {{value}} {{index}}</li>-->
     <!--      <li v-for="value in 10">{{value}}</li>-->
+
+  <button @click="toggleList()">{{isListShown ? 'Hide' : 'Show'}}List</button>
 </section>
 </body>
 </html>

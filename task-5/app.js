@@ -2,7 +2,8 @@ const app = Vue.createApp({
   data() {
     return {
       goalValue: '',
-      goals: []
+      goals: [],
+      isListShown: true
     };
   },
   methods: {
@@ -11,6 +12,9 @@ const app = Vue.createApp({
     },
     deleteGoal(index) {
       this.goals.splice(index, 1);
+    },
+    toggleList() {
+      this.isListShown = !this.isListShown
     }
   }
 });
