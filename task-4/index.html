@@ -22,13 +22,17 @@
       <input type="text" v-model="text" />
       <!-- (available classes: "user1", "user2") -->
       <p v-bind:class="text">
-        Style me!
+        Style me! - pass variable
       </p>
       <p :class="{user1: text === 'user1',
       visible: toggleBtn,
       hidden: !toggleBtn,
       user2: text === 'user2'}">
-        Style me!
+        Style me! conditional
+      </p>
+
+      <p :class="classes">
+        Style me! Use computed
       </p>
       <button v-on:click="toggle">Toggle Paragraph</button>
       <!-- 2) Use the "visible" and "hidden" classes to show/ hide the above paragraph -->
