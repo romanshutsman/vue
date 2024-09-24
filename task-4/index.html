@@ -21,7 +21,7 @@
       <!-- The entered class should be added to the below paragraph -->
       <input type="text" v-model="text" />
       <!-- (available classes: "user1", "user2") -->
-      <p v-bind:class="{user1: text === 'user1', user2: text === 'user2'}">
+      <p v-bind:class="text">
         Style me!
       </p>
       <p :class="{user1: text === 'user1',
