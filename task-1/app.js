@@ -3,6 +3,7 @@ const app = Vue.createApp({
         return {
             name: 'Roman',
             birthYear: 1996,
+            result: 0,
             imgUrl: "https://img.freepik.com/premium-photo/cool-wallpaper-landscape-background_915164-75660.jpg"
         }
     },
@@ -16,6 +17,15 @@ const app = Vue.createApp({
 
         getRandom() {
           return Math.ceil(Math.random() * 10);
+        },
+        add(num) {
+            this.result = this.result + num;
+        },
+        subtract(num) {
+            this.result = this.result - num;
+        },
+        setName(event, argument) {
+            this.name = event.target.value;
         }
     }
 });
