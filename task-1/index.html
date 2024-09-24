@@ -34,12 +34,20 @@
       <button v-on:click="add(10)">Add 10</button>
 
       <button v-on:click="subtract(5)">Subtract 5</button>
+      <button v-on:click.right="subtract(5)">Right click: Subtract 5</button>
 
+      <p v-once>Once Result: {{result}} </p>
       <p>Result: {{result}} </p>
 
       <p>Set Name:</p>
-      <input type="text" v-on:input="setName"/>
-      <input type="text" v-on:input="setName($event, 'data')"/>
+      <input type="text" v-on:input="setName" v-on:keyup.enter="confirmInput" />
+      <input type="text" v-on:input="setName($event, 'data')" v-on:keyup.enter="confirmInput" />
+
+      <p>Confirmed name: {{confirmedName}}</p>
+
+      <form v-on:submit.prevent="submitForm">
+        <button>Submit</button>
+      </form>
     </section>
   </body>
 </html>

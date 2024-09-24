@@ -2,6 +2,7 @@ const app = Vue.createApp({
     data() {
         return {
             name: 'Roman',
+            confirmedName: '',
             birthYear: 1996,
             result: 0,
             imgUrl: "https://img.freepik.com/premium-photo/cool-wallpaper-landscape-background_915164-75660.jpg"
@@ -26,6 +27,13 @@ const app = Vue.createApp({
         },
         setName(event, argument) {
             this.name = event.target.value;
+        },
+        submitForm(event) {
+            alert('hello')
+        },
+        confirmInput(e) {
+            console.log(e);
+            this.confirmedName = this.name;
         }
     }
 });
